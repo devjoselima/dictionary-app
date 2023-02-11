@@ -6,6 +6,11 @@ const sound = document.querySelector('#sound')
 
 const btn = document.querySelector('#search-button')
 
+const tema = document.getElementById('tema')
+tema.addEventListener('change', () => {
+    document.body.classList.toggle('light')
+})
+
 btn.addEventListener("click", () => {
     let inpWord = document.querySelector('#input-word').value;
 
@@ -31,10 +36,14 @@ btn.addEventListener("click", () => {
                 <p class="word-example">${data[0].meanings[0].definitions[0].example || ""}</p>
             `;
             sound.setAttribute("src", `${data[0].phonetics[0].audio || data[0].phonetics[1].audio}`);            
-        });  
+        })
+        .catch(() => {
+            result.innerHTML = `<h4 class="error">Couldn't Find The Word</h4>`
+        })
        
 });
 
 function playSound(){
     sound.play();
 }
+
