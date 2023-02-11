@@ -16,8 +16,9 @@ body{
     display: flex;
     width: 50%;
     margin: 0 auto 20px auto;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    gap: 15px;
 }
 
 .title{
