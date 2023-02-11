@@ -136,7 +136,7 @@ body{
 .result .word{
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .result button{
